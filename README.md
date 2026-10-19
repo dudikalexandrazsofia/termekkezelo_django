@@ -1,0 +1,1 @@
+# termekkezelo_django
