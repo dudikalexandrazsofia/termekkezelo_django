@@ -1,0 +1,13 @@
+{% extends 'termekkezelo_app/base.html' %}
+{% block title %}{{ cim }}{% endblock %}
+{% block content %}
+<h1>{{ cim }}</h1>
+<form method="post" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="gombok">
+        <button type="submit">Mentés</button>
+        <a class="gomb masodlagos" href="{% url 'termek_lista' %}">Mégse</a>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'termekkezelo_app/base.html' %}
+{% block title %}Termékek{% endblock %}
+{% block content %}
+<h1>Termékek</h1>
+<a class="gomb" href="{% url 'termek_uj' %}">Új termék</a>
+<table>
+    <thead>
+        <tr>
+            <th>Név</th>
+            <th>Ár (Ft)</th>
+            <th>Készlet</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for t in termekek %}
+        <tr>
+            <td>{{ t.nev }}</td>
+            <td>{{ t.ar }}</td>
+            <td>{{ t.keszlet }}</td>
+            <td>
+                <a class="gomb kicsi masodlagos" href="{% url 'termek_reszletek' t.pk %}">Részletek</a>
+                <a class="gomb kicsi" href="{% url 'termek_szerkesztes' t.pk %}">Szerkesztés</a>
+                <a class="gomb kicsi veszely" href="{% url 'termek_torles' t.pk %}">Törlés</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">Még nincs termék.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

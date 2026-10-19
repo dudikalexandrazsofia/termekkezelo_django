@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Termékkezelő{% endblock %}</title>
+    <style>
+        body 
+        {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background: #fdf2f9;
+            color: #4a1d3d;
+            margin: 0;
+        }
+        nav 
+        {
+            background: #d46bb9;
+            padding: 1rem;
+        }
+        nav a 
+        {
+            color: white;
+            margin-right: 1rem;
+            text-decoration: none;
+        }
+        main 
+        {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+        }
+        h1 
+        {
+            color: #a8328a;
+        }
+        table 
+        {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th 
+        {
+            background: #d46bb9;
+            color: white;
+        }
+        th, td 
+        {
+            padding: 0.6rem;
+            text-align: left;
+            border-bottom: 1px solid #f3b8de;
+        }
+        input, textarea 
+        {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #f3b8de;
+            border-radius: 4px;
+            
+        }
+        .gomb, button 
+        {
+        background: #c9459f;
+        color: white;
+        padding: 0.6rem 1.2rem;
+        border: 0;
+        border-radius: 6px;
+        text-decoration: none;
+        cursor: pointer;
+        font: inherit;
+        font-weight: 600;
+        display: inline-block;
+}
+        .gomb:hover, button:hover 
+        {
+            background: #b0307f;
+        }
+        .veszely 
+        {
+            background: #be185d;
+        }
+        .errorlist 
+        {
+            color: #be185d;
+            list-style: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'kezdolap' %}">Kezdőlap</a>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

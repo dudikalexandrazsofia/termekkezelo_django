@@ -1,0 +1,14 @@
+{% extends 'termekkezelo_app/base.html' %}
+{% block title %}Részletek{% endblock %}
+{% block content %}
+<h1>Részletek</h1>
+<p><strong>Azonosító:</strong> {{ object.pk }}</p>
+<p><strong>Név:</strong> {{ object.nev }}</p>
+<p><strong>Leírás:</strong> {{ object.leiras|default:"–" }}</p>
+<p><strong>Egységár (Ft):</strong> {{ object.ar }}</p>
+<p><strong>Készlet (db):</strong> {{ object.keszlet }}</p>
+<div class="gombok">
+    <a class="gomb" href="{% url 'termek_szerkesztes' object.pk %}">Szerkesztés</a>
+    <a class="gomb masodlagos" href="{% url 'termek_lista' %}">Vissza a listához</a>
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'termekkezelo_app/base.html' %}
+{% block title %}Kezdőlap{% endblock %}
+{% block content %}
+<h1>Termékkezelő</h1>
+<p>KIDBOLT</p>
+<div class="gombok">
+    <a class="gomb" href="{% url 'termek_lista' %}">Termékek listája</a>
+    <a class="gomb" href="{% url 'termek_uj' %}">Új termék felvétele</a>
+</div>
+{% endblock %}

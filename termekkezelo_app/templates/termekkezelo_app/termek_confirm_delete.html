@@ -1,0 +1,17 @@
+{% extends 'termekkezelo_app/base.html' %}
+{% block title %}Törlés{% endblock %}
+{% block content %}
+<h1>Törlés</h1>
+<h3 class="figyelmeztetes">Biztosan törölni szeretnéd ezt a terméket?</h3>
+<p><strong>Név:</strong> {{ object.nev }}</p>
+<p><strong>Leírás:</strong> {{ object.leiras|default:"–" }}</p>
+<p><strong>Egységár (Ft):</strong> {{ object.ar }}</p>
+<p><strong>Készlet (db):</strong> {{ object.keszlet }}</p>
+<form method="post">
+    {% csrf_token %}
+    <div class="gombok">
+        <button type="submit" class="veszely">Törlés megerősítése</button>
+        <a class="gomb masodlagos" href="{% url 'termek_lista' %}">Mégse</a>
+    </div>
+</form>
+{% endblock %}
